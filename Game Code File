@@ -1,0 +1,69 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#Write your code below this line 👇
+player_choice = input("Rock, Paper, Scissors; press 0 to shoot rock, 1 to shoot paper, or 2 to shoot scissors. ")
+print("\nYour choice: ")
+if player_choice == "0":
+  print(rock)
+elif player_choice == "1":
+  print(paper)
+else:
+  print(scissors)
+
+import random
+
+print("Computer's choice:")
+
+game_options = [rock, paper, scissors]
+
+computers_choice = random.randint(0,2)
+number_index = int(computers_choice)-1
+print(game_options[computers_choice])
+# print(computers_choice)
+
+if player_choice == "O":
+  if number_index == 1:
+    print("You Lose (Win)")
+  elif number_index == 2:
+    print("You Win Lose")
+  else:
+    print("It's a Draw")
+elif player_choice == "1":
+  if number_index == 2:
+    print("You Lose")
+  elif number_index == 0:
+    print("You Win")
+  else:
+    print("It's a Draw")
+else:
+  if number_index == 0:
+    print("You Lose")
+  elif number_index == 1:
+    print("You Win")
+  else:
+    print("It's a Draw")
