@@ -26,44 +26,41 @@ scissors = '''
 '''
 
 #Write your code below this line 👇
-player_choice = input("Rock, Paper, Scissors; press 0 to shoot rock, 1 to shoot paper, or 2 to shoot scissors. ")
-print("\nYour choice: ")
-if player_choice == "0":
-  print(rock)
-elif player_choice == "1":
-  print(paper)
-else:
-  print(scissors)
+game_choices = [rock, paper, scissors]
+player_choice = int(input("Do you want to choose rock, paper, or scissors? Input 0 for rock, 1 for paper, 2 for scissors. "))
+
+print("Your choice:")
+print(game_choices[player_choice])
+
+# list_length = len(game_choices)
+# print(list_length)
 
 import random
-
+random_var = random.randint(0,2)
+# print(random_var)
+computer_choice = game_choices[random_var]
 print("Computer's choice:")
+print(computer_choice)
 
-game_options = [rock, paper, scissors]
 
-computers_choice = random.randint(0,2)
-number_index = int(computers_choice)-1
-print(game_options[computers_choice])
-# print(computers_choice)
-
-if player_choice == "O":
-  if number_index == 1:
-    print("You Lose (Win)")
-  elif number_index == 2:
-    print("You Win Lose")
-  else:
-    print("It's a Draw")
-elif player_choice == "1":
-  if number_index == 2:
+if player_choice == 0:
+  if computer_choice == rock:
+    print("It's a draw")
+  elif computer_choice == paper:
     print("You Lose")
-  elif number_index == 0:
-    print("You Win")
   else:
-    print("It's a Draw")
+    print("You Win")
+elif player_choice == 1:
+  if computer_choice == rock:
+    print("You Win")
+  elif computer_choice == scissors:
+    print("You Lose")
+  else:
+    print("It's a draw")
 else:
-  if number_index == 0:
-    print("You Lose")
-  elif number_index == 1:
+  if computer_choice == paper:
     print("You Win")
+  elif computer_choice == rock:
+    print("You Lose")
   else:
-    print("It's a Draw")
+    print("It's a draw")
